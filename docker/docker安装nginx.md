@@ -34,20 +34,6 @@ mkdir -p /data/nginx/logs
 docker cp mynginx:/etc/nginx /data/nginx
 ```
 
-2.再复制nginx网页文件地址
-
-```powershell
-docker cp mynginx:/usr/share/nginx/html /data/nginx/html/dist
-```
-
-3.最后复制nginx日志文件地址
-
-```powershell
-docker cp mynginx:/var/log/nginx /data/nginx/logs
-```
-
-
-
 注意：如果提示：No such container:path: mynginx::/etc/nginx
 
 需要进入nginx容器然后退出容器再试
@@ -72,7 +58,7 @@ docker container rm mynginx
 ## 创建nginx容器并挂载配置目录
 
 ```bash
-docker run --name ainginx1 -p 8001:80 -v /data/nginx/html/dist:/usr/share/nginx/html -v /data/nginx/nginx/nginx.conf:/etc/nginx/ningx.conf  -v /data/nginx/nginx/conf.d:/etc/nginx/conf.d -d nginx:latest
+docker run --name mynginx -p 80:80 -v /data/nginx/nginx/nginx.conf:/etc/nginx/ningx.conf -d --restart=always nginx:latest
 ```
 
 ## 查看配置目录
