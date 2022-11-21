@@ -1,0 +1,30 @@
+server:
+  port: 8898
+  servlet:
+    context-path: /
+
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://82.157.101.15:3306/glados?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456hhy
+
+mybatis-plus:
+  mapper-locations: classpath:mapping/*Mapper.xml
+
+logging:
+  level:
+    com:
+      example:
+        gladoscheckin:
+          qd:
+          mapper: debug
+email:
+  #发件人邮箱
+  myEmailAccount: 15135842296@163.com
+  #发件人邮箱密码（授权码）
+  myEmailPassword: QXSHNPZZAQVVLRJW
+  #收件人邮箱（此处配置无效，从接口中获取的邮箱）
+  receiveMailAccount: xxx@qq.com
