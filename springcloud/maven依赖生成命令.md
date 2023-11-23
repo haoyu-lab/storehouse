@@ -1,0 +1,1 @@
+mvn install:install-file -DgroupId=org.mockito -DartifactId=mockito-all -Dversion=1.10.19 -Dpackaging=jar -Dfile=/Users/liufei/Desktop/mockito-all-1.10.19.jar
